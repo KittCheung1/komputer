@@ -3,6 +3,7 @@ const btnWork = document.getElementById("work");
 const btnBank = document.getElementById("bank");
 const btnLoan = document.getElementById("loan");
 const btnBuy =  document.getElementById("buy");
+//some random text
 
 //const moneyInBank = document.getElementById("balance");
 const komputerPrice = document.getElementById("price");
