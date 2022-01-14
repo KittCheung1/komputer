@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Komputer Store</title>
+</head>
+<body>
+    <h1 style="background-color: deepskyblue;">Komputer Store</h1>
+    <div class="container">
+        <div class="left">
+            <h4>Bank</h4>
+            <p>Balance</p>
+            <p id="balance">0</p>
+            <p hidden id="current-loan"> Current loan</p>
+            <p hidden id="sum-of-loan">0</p>
+            <button id="loan">Get a Loan</button>
+        </div>
+        <div class="middle">
+            <h4>Work</h4>
+            <p id="pay">Pay</p>
+            <p id="salary">0</p>
+            <button id="bank" on>Bank</button>
+            <button id="work">Work</button>
+            
+        </div>  
+        <div class="right">
+            <h4>Laptops</h4>
+            <select id="komputers">
+                <option value=”red”>Red</option>
+                <option value=”purple”>Purple </option>
+            </select>
+            <div>
+                <h4>Features</h4>
+                <p>some random features</p>
+            </div>
+        </div>
+        <div class="info">
+            <p id="price">1500 SEK</p>
+            <button id="buy">BUY NOW</button>
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>
