@@ -6,50 +6,51 @@ const btnRepay = document.getElementById("repay");
 // const btnBuy =  document.getElementById("buy");
 
 const sumOfLoan = document.getElementById("sum-of-loan");
-const moneyInBank = document.getElementById("balance");
+// const balance = document.getElementById("balance");
 //const komputerPrice = document.getElementById("price");
-const earnedMoney = document.getElementById("salary");
+// const salary = document.getElementById("salary");
 
 
 function increment() {
-    let money = parseInt(earnedMoney.innerText);
+    let money = parseInt(salary.innerText);
     money += 100;
-    salary.innerText = money;
+    salary.innerText = money + "kr";
 }
 
 function banking() {
-    let currentMoney = parseInt(earnedMoney.innerText);
+    let currentMoney = parseInt(salary.innerText);
     let currentBalance = parseInt(balance.innerText);
     if (currentBalance == 0) {
-        balance.innerText = currentMoney;
-        
+        balance.innerText = currentMoney + " kr";
+
     }
     else if (currentBalance != 0 && parseInt(sumOfLoan.innerText) == 0) {
+        console.log(currentBalance);
         currentBalance += currentMoney;
-        balance.innerText = currentBalance;
+        balance.innerText = currentBalance + " kr";
     }
-    if (currentBalance != 0 && parseInt(sumOfLoan.innerText) != 0){
-        let deductedMoney = parseFloat(earnedMoney.innerText * 0.9);
-        balance.innerText = currentBalance + deductedMoney;
-        sumOfLoan.innerText = parseInt(sumOfLoan.innerText) + parseFloat(earnedMoney.innerText) * 0.1;
+    else if (currentBalance != 0 && parseInt(sumOfLoan.innerText) != 0) {
+        let deductedMoney = parseInt(salary.innerText) * 0.9;
+        balance.innerText = currentBalance + deductedMoney + " kr";
+        sumOfLoan.innerText = parseInt(sumOfLoan.innerText) + parseFloat(salary.innerText) * 0.1 + " kr";
     }
-    if (sumOfLoan.innerText == 0) {
+    else if (parseInt(sumOfLoan.innerText == 0)) {
         document.getElementById("current-loan").hidden = true;
         sumOfLoan.hidden = true;
         btnRepay.hidden = true;
     }
-    earnedMoney.innerText = 0;
+    salary.innerText = 0 + " kr";
 }
 
 function loaning() {
-    if (parseInt(moneyInBank.innerText) !=0 && parseInt(sumOfLoan.innerText) == 0) {
+    if (parseInt(balance.innerText) != 0 && parseInt(sumOfLoan.innerText) == 0) {
         const loanAmount = parseInt(prompt("How much do you want to loan?"));
-        
-        if (loanAmount != 0 && loanAmount <= parseInt(balance.innerText) * 2){
+
+        if (loanAmount != 0 && loanAmount <= parseInt(balance.innerText) * 2) {
             alert("loan accepted!");
             document.getElementById("current-loan").hidden = false;
             sumOfLoan.hidden = false;
-            sumOfLoan.innerText = loanAmount;
+            sumOfLoan.innerText = loanAmount + " kr";
             btnRepay.hidden = false;
         }
         else {
@@ -61,22 +62,21 @@ function loaning() {
     }
 }
 
-function toRepay(){
-    if (parseInt(earnedMoney.innerHTML) != 0 && parseInt(sumOfLoan.innerText) != 0) {
-        if (parseInt(earnedMoney.innerText) >= parseInt(sumOfLoan.innerText)) {
-            let leftoverPay = parseInt(earnedMoney.innerHTML) - parseInt(sumOfLoan.innerText);
-            moneyInBank.innerText = parseInt(moneyInBank.innerText) + leftoverPay;
-            sumOfLoan.innerText = 0;
-            earnedMoney.innerText = 0;
+function toRepay() {
+    if (parseInt(balance.innerHTML) != 0 && parseInt(sumOfLoan.innerText) != 0) {
+        if (parseInt(salary.innerText) >= parseInt(sumOfLoan.innerText)) {
+            let leftoverPay = parseInt(salary.innerHTML) - parseInt(sumOfLoan.innerText);
+            balance.innerText = parseInt(balance.innerText) + leftoverPay + " kr";
+            sumOfLoan.innerText = 0 + " kr";
+            salary.innerText = 0 + " kr";
             document.getElementById("current-loan").hidden = true;
             sumOfLoan.hidden = true;
             btnRepay.hidden = true;
-            console.log(parseInt(moneyInBank. innerText));
         }
-        else if(parseInt(sumOfLoan.innerText) >= parseInt(earnedMoney.innerText)){
-            let leftoverLoan = parseInt(sumOfLoan.innerText) - parseInt(earnedMoney.innerText);
-            sumOfLoan.innerText = leftoverLoan;
-            earnedMoney.innerText = 0;
+        else if (parseInt(sumOfLoan.innerText) >= parseInt(salary.innerText)) {
+            let leftoverLoan = parseInt(sumOfLoan.innerText) - parseInt(salary.innerText);
+            sumOfLoan.innerText = leftoverLoan + " kr";
+            salary.innerText = 0 + " kr";
         }
         else alert("error");
     }
