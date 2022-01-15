@@ -62,16 +62,25 @@ function loaning() {
 }
 
 function toRepay(){
-    if(parseInt(moneyInBank.innerText) >= parseInt(sumOfLoan.innerText)){
-        let deductLoan = parseInt(moneyInBank.innerText) - parseInt(sumOfLoan.innerText);
-        moneyInBank.innerText = deductLoan;
-        sumOfLoan.innerText = 0;
-        console.log(deductLoan);
-        document.getElementById("current-loan").hidden = true;
-        sumOfLoan.hidden = true;
-        btnRepay.hidden = true;
+    if (parseInt(earnedMoney.innerHTML) != 0 && parseInt(sumOfLoan.innerText) != 0) {
+        if (parseInt(earnedMoney.innerText) >= parseInt(sumOfLoan.innerText)) {
+            let leftoverPay = parseInt(earnedMoney.innerHTML) - parseInt(sumOfLoan.innerText);
+            moneyInBank.innerText = parseInt(moneyInBank.innerText) + leftoverPay;
+            sumOfLoan.innerText = 0;
+            earnedMoney.innerText = 0;
+            document.getElementById("current-loan").hidden = true;
+            sumOfLoan.hidden = true;
+            btnRepay.hidden = true;
+            console.log(parseInt(moneyInBank. innerText));
+        }
+        else if(parseInt(sumOfLoan.innerText) >= parseInt(earnedMoney.innerText)){
+            let leftoverLoan = parseInt(sumOfLoan.innerText) - parseInt(earnedMoney.innerText);
+            sumOfLoan.innerText = leftoverLoan;
+            earnedMoney.innerText = 0;
+        }
+        else alert("error");
     }
-    else alert("not enough balance");
+    else alert("not enough balance in Pay");
 }
 
 
