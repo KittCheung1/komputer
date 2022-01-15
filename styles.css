@@ -1,5 +1,6 @@
 body{
     background-color: white;
+    font-family: sans-serif;
 }
 
 .container{
@@ -73,7 +74,29 @@ body{
     left: 70%;
 }
 
+#repay{
+    background-color:rgb(223, 82, 16);
+    top: 70%;
+    left: 5%;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    padding: 7px 10px;
+    font-weight: bold;
+}
+
 #loan{
+    background-color:rgb(79, 231, 180);
+    cursor: pointer;
+    position: absolute;
+    width: 100px;
+    left: 50%;
+    top: 70%;
+    padding: 7px 8px;
+    text-align: center;
+    font-weight: bold;
+}
+/* #loan{
     background-color:rgb(79, 231, 180);
     cursor: pointer;
     position: absolute;
@@ -83,7 +106,14 @@ body{
     text-align: center;
     padding: 7px 10px;
     font-weight: bold;
-}
+} */
+ /* #loan:focus{
+    background-color:rgb(79, 231, 180) ;
+    width: 100px;
+    left: 50%;
+    top: 70%;
+    padding: 7px 8px;
+ } */
 
 #bank{
     background-color:rgb(243, 243, 66);
