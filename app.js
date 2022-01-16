@@ -3,12 +3,46 @@ const btnWork = document.getElementById("work");
 const btnBank = document.getElementById("bank");
 const btnLoan = document.getElementById("loan");
 const btnRepay = document.getElementById("repay");
+
 // const btnBuy =  document.getElementById("buy");
 
 const sumOfLoan = document.getElementById("sum-of-loan");
+const komputers = document.getElementById("komputers");
 // const balance = document.getElementById("balance");
 //const komputerPrice = document.getElementById("price");
 // const salary = document.getElementById("salary");
+
+
+
+
+
+
+
+
+
+
+// let komputers =[];
+// fetch("https://noroff-komputer-store-api.herokuapp.com/computers")
+// .then(response => response.json())
+// .then(data => komputers = data)
+// .then(komputers => )
+
+
+// const addKomputersToMenu = (komputers) =>{
+//     komputers.forEach(element => addKomputerToMenu(x));
+// }
+// const addKomputerToMenu = (komputer) =>{
+//     const komputerElement = document.createElement("option");
+//     komputerElement.value = komputer.id;
+//     komputerElement.appendChild(document.createTextNode(komputers.description));
+// }
+
+
+
+
+
+
+
 
 
 function increment() {
