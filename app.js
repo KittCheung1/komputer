@@ -7,10 +7,8 @@ const btnRepay = document.getElementById("repay");
 // const btnBuy =  document.getElementById("buy");
 
 const sumOfLoan = document.getElementById("sum-of-loan");
-const komputers = document.getElementById("komputers");
-// const balance = document.getElementById("balance");
-//const komputerPrice = document.getElementById("price");
-// const salary = document.getElementById("salary");
+const komputersElement = document.getElementById("komputers");
+const komputerPrice = document.getElementById("price");
 
 
 
@@ -20,22 +18,40 @@ const komputers = document.getElementById("komputers");
 
 
 
+let komputers = [];
+fetch("https://noroff-komputer-store-api.herokuapp.com/computers")
+    .then(response => response.json())
+    .then(data => komputers = data)
+    .then(komputers => addKomputersToMenu(komputers));
 
-// let komputers =[];
-// fetch("https://noroff-komputer-store-api.herokuapp.com/computers")
-// .then(response => response.json())
-// .then(data => komputers = data)
-// .then(komputers => )
 
+const addKomputersToMenu = (komputers) => {
+    komputers.forEach(x => addKomputerToMenu(x));
+    komputerPrice.innerText = komputers[0].price + " SEK";
+    komputerFeatures.innerText = komputers[0].specs.join("\r\n");
+    descripInfo.innerText = komputers[0].description;
+    komputerImage.src="https://noroff-komputer-store-api.herokuapp.com/" + komputers[0].image;
+}
+const addKomputerToMenu = (komputer) => {
+    const komputerElement = document.createElement("option");
+    komputerElement.value = komputer.id;
+    komputerElement.appendChild(document.createTextNode(komputer.title));
+    komputersElement.appendChild(komputerElement);
+}
 
-// const addKomputersToMenu = (komputers) =>{
-//     komputers.forEach(element => addKomputerToMenu(x));
-// }
-// const addKomputerToMenu = (komputer) =>{
-//     const komputerElement = document.createElement("option");
-//     komputerElement.value = komputer.id;
-//     komputerElement.appendChild(document.createTextNode(komputers.description));
-// }
+const handleKomputerMenuChange = e => {
+    const selectedKomputer = komputers[e.target.selectedIndex];
+    komputerPrice.innerText = selectedKomputer.price + " SEK";
+    komputerFeatures.innerText = selectedKomputer.specs.join("\r\n");
+    descripInfo.innerText = selectedKomputer.description;
+    if (selectedKomputer.image == "assets/images/5.jpg") {
+        const visor = "assets/images/5.png";
+        komputerImage.src="https://noroff-komputer-store-api.herokuapp.com/" + visor;
+    }else {
+    komputerImage.src="https://noroff-komputer-store-api.herokuapp.com/" + selectedKomputer.image;
+    }
+}
+
 
 
 
@@ -80,7 +96,7 @@ function loaning() {
     if (parseInt(balance.innerText) != 0 && parseInt(sumOfLoan.innerText) == 0) {
         const loanAmount = parseInt(prompt("How much do you want to loan?"));
 
-        if (loanAmount != 0 && loanAmount <= parseInt(balance.innerText) * 2) {
+        if (0 < loanAmount != 0 && loanAmount <= parseInt(balance.innerText) * 2) {
             alert("loan accepted!");
             document.getElementById("current-loan").hidden = false;
             sumOfLoan.hidden = false;
@@ -107,19 +123,19 @@ function toRepay() {
             sumOfLoan.hidden = true;
             btnRepay.hidden = true;
         }
-        else if (parseInt(sumOfLoan.innerText) >= parseInt(salary.innerText)) {
+        else if (parseInt(sumOfLoan.innerText) >= parseInt(salary.innerText) && parseInt(salary.innerText) != 0) {
             let leftoverLoan = parseInt(sumOfLoan.innerText) - parseInt(salary.innerText);
             sumOfLoan.innerText = leftoverLoan + " kr";
             salary.innerText = 0 + " kr";
+            console.log("hej");
         }
-        else alert("error");
+        else alert("not enough balance in Pay");
     }
-    else alert("not enough balance in Pay");
 }
-
 
 
 btnWork.addEventListener("click", increment);
 btnBank.addEventListener("click", banking);
 btnLoan.addEventListener("click", loaning);
 btnRepay.addEventListener("click", toRepay);
+komputersElement.addEventListener("change", handleKomputerMenuChange);

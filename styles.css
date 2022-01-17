@@ -8,8 +8,9 @@ body{
     width: 100%;
     background-color: rgba(235, 235, 235, 0.432);
     vertical-align:middle;
-    display:inline-block;
+    /* display:inline-block; */
     float: left;
+    padding-top: 30px;
 }   
 
 .left{
@@ -20,6 +21,7 @@ body{
     padding: 1%;
     float: left;
     margin-left: 8%;
+    display: inline-block;
 }
 
 .middle{
@@ -34,18 +36,21 @@ body{
 .right{ 
     background-color: rgb(247, 169, 75);
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: fit-content;
+    height: fit-content;
     margin-left: 8%;
     padding: 1%;
     float: left;
+    text-align: left;
+    display: inline-block;
 }
 .info{
     background-color: darkseagreen;
     position: relative;
     width: 100%;
     height: 150px;
-    top: 45%;
+    margin-top: 10px;
+    /* top: 45%; */
     float: left;
     padding-top: 10%;
     text-align: right;
@@ -96,24 +101,6 @@ body{
     text-align: center;
     font-weight: bold;
 }
-/* #loan{
-    background-color:rgb(79, 231, 180);
-    cursor: pointer;
-    position: absolute;
-    left: 15%;
-    top: 70%;
-    width: 150px;
-    text-align: center;
-    padding: 7px 10px;
-    font-weight: bold;
-} */
- /* #loan:focus{
-    background-color:rgb(79, 231, 180) ;
-    width: 100px;
-    left: 50%;
-    top: 70%;
-    padding: 7px 8px;
- } */
 
 #bank{
     background-color:rgb(243, 243, 66);
@@ -140,12 +127,14 @@ body{
 #komputers{
     /* position: relative; */
     left:20px;
-    width: 150px;
+    width: auto;
     cursor: pointer;
+}
+#komputerFeatures{
+    font-size: 13px;
 }
 
 #price{
-    /* position: relative; */
     right: 20%;
     top: 10%;
     font-weight: bold;
@@ -155,8 +144,27 @@ body{
     margin-right: 5%;
 }
 
-#buy{
+#descripInfo{
+    background-color: rgb(8, 185, 61);
+    padding: 8px;
+    right: 20%;
+    top: 10%;
+    border: rgb(1, 109, 24);
+    border-style:solid;
+    max-width: 300px;
+    font-size: 15px;
+    text-align: left;
+    display:inline-block;
+    margin-right: 5%;
+}
+
+#komputerImage{
     /* position: relative; */
+    /* display: inline-block; */
+    max-width: 100%;
+    max-height: 100%;
+}
+#buy{
     background-color: darkorange;
     cursor: pointer;
     font-style: bold;
