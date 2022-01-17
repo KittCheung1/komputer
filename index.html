@@ -12,24 +12,24 @@
 <body>
     <h1 style="background-color: deepskyblue;">Komputer Store</h1>
     <div class="container">
-        <div class="left">
+        <div class="box" id="left">
             <h4>Bank</h4>
             <p>Balance</p>
             <p id="balance">0kr</p>
             <p hidden id="current-loan"> Current loan</p>
             <p hidden id="sum-of-loan">0kr</p>
-            <button hidden id="repay">Repay Loan</button>
-            <button id="loan">Get a Loan</button>
+            <button hidden class="btn" id="repay">Repay Loan</button>
+            <button class="btn" id="loan">Get a Loan</button>
         </div>
-        <div class="middle">
+        <div class="box" id="middle">
             <h4>Work</h4>
             <p id="pay">Pay</p>
             <p id="salary">0kr</p>
-            <button id="bank" on>Bank</button>
-            <button id="work">Work</button>
+            <button class="btn" id="bank" on>Bank</button>
+            <button class="btn" id="work">Work</button>
 
         </div>
-        <div class="right">
+        <div class="box" id="right">
             <h4>Laptops</h4>
             <select name="komputers" id="komputers">
             </select>
@@ -38,12 +38,12 @@
                 <p id="komputerFeatures"></p>
             </div>
         </div>
-        <div class="info">
-            <img src="" id="komputerImage" hdsad>
-            <p id="descripInfo">hello</p>
-            <p id="price"></p>
-            <button id="buy">BUY NOW</button>
-        </div>
+    </div>
+    <div class="info">
+        <img src="" id="komputerImage">
+        <p id="descripInfo">hello</p>
+        <p id="price"></p>
+        <button id="buy">BUY NOW</button>
     </div>
 </body>
 <script src="app.js"></script>

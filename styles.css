@@ -4,56 +4,48 @@ body{
 }
 
 .container{
-    /* position: relative; */
+    position: relative;
     width: 100%;
+    height: 300px;
     background-color: rgba(235, 235, 235, 0.432);
-    vertical-align:middle;
-    /* display:inline-block; */
+    display: flex;
     float: left;
-    padding-top: 30px;
 }   
 
-.left{
+.box{
     background-color: rgb(247, 169, 75);
-    position: relative;
-    width: 200px;
-    height: 200px; 
-    padding: 1%;
-    float: left;
-    margin-left: 8%;
     display: inline-block;
+    position: relative;
+    margin-left: 5em;
+    padding: 1%;
+    text-align: left;
+    width: calc(100% / 3)
 }
 
-.middle{
-    background-color: rgb(247, 169, 75);
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin-left: 8%;
-    padding: 1%;
-    float: left;
+#left{
+
 }
-.right{ 
-    background-color: rgb(247, 169, 75);
-    position: relative;
-    width: fit-content;
-    height: fit-content;
-    margin-left: 8%;
-    padding: 1%;
-    float: left;
-    text-align: left;
-    display: inline-block;
+
+#middle{
+
 }
+
+#right{ 
+    margin-right: 5em;
+}
+
 .info{
     background-color: darkseagreen;
     position: relative;
     width: 100%;
+    /* left: 10px;
+    top: 400px; */
+    /* display: inline-flex; */
     height: 150px;
-    margin-top: 10px;
-    /* top: 45%; */
+    margin-top: 20px;
     float: left;
-    padding-top: 10%;
-    text-align: right;
+    padding: 2%;
+    /* text-align: right; */
 }
 
 #balance{
@@ -90,38 +82,40 @@ body{
     font-weight: bold;
 }
 
+.btn{
+    position: relative;
+    font-weight: bold;
+    text-align: center;
+    width: fit-content;
+    cursor: pointer;
+}
+
 #loan{
     background-color:rgb(79, 231, 180);
-    cursor: pointer;
-    position: absolute;
     width: 100px;
     left: 50%;
-    top: 70%;
+    /* top: 50%; */
     padding: 7px 8px;
-    text-align: center;
-    font-weight: bold;
 }
 
 #bank{
     background-color:rgb(243, 243, 66);
-    cursor: pointer;
-    position: relative;
+    /* cursor: pointer; */
     left: 10px;
     top: 50px;
-    text-align: center;
+    /* text-align: center; */
     padding: 7px 20px;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 #work{
     background-color:rgb(93, 131, 248);
-    cursor: pointer;
-    position: relative;
+    /* cursor: pointer; */
     left: 30px;
     top: 50px;
-    text-align: center;
+    /* text-align: center; */
     padding: 7px 20px;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 #komputers{
@@ -140,38 +134,42 @@ body{
     font-weight: bold;
     font-size: 20px;
     text-align: center;
-    display:inline-block;
+    display:inline-flex;
     margin-right: 5%;
 }
 
 #descripInfo{
     background-color: rgb(8, 185, 61);
+    position: relative;
     padding: 8px;
-    right: 20%;
-    top: 10%;
     border: rgb(1, 109, 24);
     border-style:solid;
     max-width: 300px;
     font-size: 15px;
     text-align: left;
-    display:inline-block;
+    display:inline-flex; 
+    margin-left: 5%;
     margin-right: 5%;
+    /* width: calc(100% / 3); */
 }
 
+
 #komputerImage{
-    /* position: relative; */
-    /* display: inline-block; */
-    max-width: 100%;
-    max-height: 100%;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    object-fit:fill;
 }
+
 #buy{
     background-color: darkorange;
+    position: relative;
     cursor: pointer;
     font-style: bold;
     text-align: center;
     width: 160px;
     padding: 7px 25px;
-    margin-right: 5%;
+    /* margin-right: 5%; */
     font-weight: bold;
     text-align: center;
     display:inline-block;
