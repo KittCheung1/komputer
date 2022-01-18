@@ -14,116 +14,103 @@ body{
 
 .box{
     background-color: rgb(247, 169, 75);
-    display: inline-block;
     position: relative;
-    margin-left: 5em;
+    margin-left: 5%;
     padding: 1%;
     text-align: left;
     width: calc(100% / 3)
-}
-
-#left{
-
-}
-
-#middle{
-
-}
-
-#right{ 
-    margin-right: 5em;
 }
 
 .info{
     background-color: darkseagreen;
     position: relative;
     width: 100%;
-    /* left: 10px;
-    top: 400px; */
-    /* display: inline-flex; */
+    display: inline-flex;
     height: 150px;
     margin-top: 20px;
     float: left;
     padding: 2%;
-    /* text-align: right; */
-}
-
-#balance{
-    position: absolute;
-    top: 25%;
-    left: 70%;
-}
-
-#pay{
-    left: 10%;
-    bottom: 20%;
-}
-
-#sum-of-loan{
-    position: absolute;
-    top: 40%;
-    left: 70%;
-}
-
-#salary{
-    position: absolute;
-    top: 25%;
-    left: 70%;
-}
-
-#repay{
-    background-color:rgb(223, 82, 16);
-    top: 70%;
-    left: 5%;
-    text-align: center;
-    cursor: pointer;
-    position: absolute;
-    padding: 7px 10px;
-    font-weight: bold;
+    
 }
 
 .btn{
-    position: relative;
+    position: absolute;
     font-weight: bold;
     text-align: center;
     width: fit-content;
     cursor: pointer;
 }
 
+#right{ 
+    margin-right: 5%;
+}
+
+#balanceTitle{
+    position: absolute;
+    display: inline-flex;
+}
+#balance{
+    position: absolute;
+    display: inline-flex;
+    left: 70%;
+}
+
+#current-loan{
+    position: absolute;
+    display: inline-flex;
+    top: 35% ;
+}
+
+#pay{
+    display: inline-flex;
+}
+
+#sum-of-loan{
+    position: absolute;
+    left: 70%;
+    top: 35%;
+}   
+
+#salary{
+    position: absolute;
+    display: inline-flex;
+    left: 70%;
+}
+
+#repay{
+    background-color:rgb(223, 82, 16);
+    top: 70%; 
+    left: 10%;
+    padding: 7px 10px;
+    font-weight: bold;
+}
+
 #loan{
+    top: 70%; 
+    left: 55%;
     background-color:rgb(79, 231, 180);
-    width: 100px;
-    left: 50%;
-    /* top: 50%; */
     padding: 7px 8px;
 }
 
 #bank{
     background-color:rgb(243, 243, 66);
-    /* cursor: pointer; */
-    left: 10px;
-    top: 50px;
-    /* text-align: center; */
+    top: 70%;
     padding: 7px 20px;
-    /* font-weight: bold; */
 }
 
 #work{
     background-color:rgb(93, 131, 248);
-    /* cursor: pointer; */
-    left: 30px;
-    top: 50px;
-    /* text-align: center; */
+    top: 70%;
+    left:60%;
     padding: 7px 20px;
-    /* font-weight: bold; */
 }
 
 #komputers{
-    /* position: relative; */
     left:20px;
     width: auto;
     cursor: pointer;
 }
+
 #komputerFeatures{
     font-size: 13px;
 }
@@ -136,21 +123,22 @@ body{
     text-align: center;
     display:inline-flex;
     margin-right: 5%;
+    margin-top: 6%;
 }
 
 #descripInfo{
     background-color: rgb(8, 185, 61);
     position: relative;
     padding: 8px;
+    margin-top: 5%;
+    height: 25%;
     border: rgb(1, 109, 24);
     border-style:solid;
     max-width: 300px;
     font-size: 15px;
     text-align: left;
-    display:inline-flex; 
-    margin-left: 5%;
-    margin-right: 5%;
-    /* width: calc(100% / 3); */
+    margin-left: 13%;
+    margin-right: 8%;
 }
 
 
@@ -169,7 +157,8 @@ body{
     text-align: center;
     width: 160px;
     padding: 7px 25px;
-    /* margin-right: 5%; */
+    margin-top: 5%;
+    height: 25%;
     font-weight: bold;
     text-align: center;
     display:inline-block;
