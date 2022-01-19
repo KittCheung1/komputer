@@ -4,7 +4,7 @@
 Komputer Store
 
 ## Maintainer
-GitLab- @KittCheung
+GitLab- @KittCheung, 
 GitHub- KittCheung1
 
 ## Description
