@@ -88,18 +88,18 @@ function banking() {
 function loaning() {
     if (parseInt(balance.innerText) != 0 && parseInt(sumOfLoan.innerText) == 0) {
         const loanAmount = parseInt(prompt("How much do you want to loan?"));
-
+        const maximumLoan = parseInt(balance.innerText) * 2;
         if (0 < loanAmount != 0 && loanAmount <= parseInt(balance.innerText) * 2) {
-            alert("loan accepted!");
+            alert("Loan accepted!");
             currentLoan.hidden = false;
             sumOfLoan.hidden = false;
             sumOfLoan.innerText = loanAmount + " kr";
             btnRepay.hidden = false;
         } else {
-            alert("input error, loan NOT accepted!");
+            alert(`Enter positive numbers only. Maximum loan you can take is ${maximumLoan}`);
         }
     } else {
-        alert("you can NOT take a loan");
+        alert("You can not take more loans");
     }
 }
 
@@ -119,7 +119,7 @@ function toRepay() {
             let leftoverLoan = parseInt(sumOfLoan.innerText) - parseInt(salary.innerText);
             sumOfLoan.innerText = leftoverLoan + " kr";
             salary.innerText = 0 + " kr";
-        } else alert("not enough balance in Pay");
+        } else alert("Not enough balance in Pay");
     }
 }
 
@@ -128,10 +128,10 @@ function toRepay() {
 function toBuy() {
     if (parseInt(balance.innerText) >= parseInt(price.innerText)) {
         let komputerPrice = parseInt(price.innerText);
-        alert(`You have bought a ${komputerName.innerText} for ${komputerPrice} SEK`);
+        alert(`You have now bought a ${komputerName.innerText} for ${komputerPrice} SEK`);
         balance.innerText = parseInt(balance.innerText) - parseInt(price.innerText);
     } else {
-        alert("you dont have enough money in Bank balance");
+        alert("You dont have enough money in Bank balance");
     }
 }
 
