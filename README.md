@@ -12,8 +12,8 @@ Assignment given by Noroff.
 * User can choose to buy one of the listed komputers after having "worked" and earned some money in the Pay-balance.
 * By banking the money, the user can then take a lone or attempt to buy a komputer.
 * Loan can maximum be double the amount of money the user has in the Bank-balance.
-* only 1 loan can be taken.
-* If user is currently having a loan and choose to Bank the "worked" Pay-balance, 10% of the Pay-balance will be added to the loan. (assuming it's taxes for having a loan)
+* Only 1 loan can be taken.
+* If user is currently having a loan and choose to Bank the "worked" Pay-balance, 10% of the Pay-balance will be added to the loan (assuming it's taxes for having a loan)
 and the rest will be added to the bank.
 * If user wants to repay loan, the "worked" Pay-balance need to have higher amount or same amount of money as the loan amount.
 
