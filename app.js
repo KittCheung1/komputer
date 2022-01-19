@@ -90,10 +90,11 @@ function loaning() {
         const loanAmount = parseInt(prompt("How much do you want to loan?"));
         const maximumLoan = parseInt(balance.innerText) * 2;
         if (0 < loanAmount != 0 && loanAmount <= parseInt(balance.innerText) * 2) {
-            alert("Loan accepted!");
+            alert(`Loan accepted!" ${loanAmount} kr will be added to your Bank balance`);
             currentLoan.hidden = false;
             sumOfLoan.hidden = false;
             sumOfLoan.innerText = loanAmount + " kr";
+            balance.innerText = parseInt(balance.innerText) + loanAmount + "kr";
             btnRepay.hidden = false;
         } else {
             alert(`Enter positive numbers only. Maximum loan you can take is ${maximumLoan}`);
